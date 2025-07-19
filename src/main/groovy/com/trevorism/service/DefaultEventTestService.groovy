@@ -58,7 +58,8 @@ class DefaultEventTestService implements EventTestService {
 
         if (expiredUsers) {
             TestError testError = new TestError([source : "expiration-tester",
-                                                 message: "The following users have expired: " + expiredUsers.collect { it.toString() }.join(",\n")])
+                                                 message: "The following users have expired: " + expiredUsers.collect { it.toString() }.join(",\n"),
+                                                 details: [kind:"web"]])
             this.testErrorClient.addTestError(testError)
         }
 
@@ -84,7 +85,8 @@ class DefaultEventTestService implements EventTestService {
         }
         if (expiredApps) {
             TestError testError = new TestError([source : "expiration-tester",
-                                                 message: "The following apps have expired: " + expiredApps.collect { it.toString() }.join(",\n")])
+                                                 message: "The following apps have expired: " + expiredApps.collect { it.toString() }.join(",\n"),
+                                                 details: [kind:"web"]])
             this.testErrorClient.addTestError(testError)
         }
 
