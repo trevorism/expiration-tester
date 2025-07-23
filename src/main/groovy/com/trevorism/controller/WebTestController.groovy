@@ -24,11 +24,10 @@ class WebTestController {
     EventTestService eventTestService
 
     @Tag(name = "Test Endpoint Operations")
-    @Operation(summary = "Tests event alerting system **Secure")
+    @Operation(summary = "Tests expiration of apps and users **Secure")
     @Post(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     TestResult testUserExpiry(@Body TestSuite testSuite) {
-        //Start a millisecond timer
         long startTime = System.currentTimeMillis()
         def allTestResults = []
         try {
