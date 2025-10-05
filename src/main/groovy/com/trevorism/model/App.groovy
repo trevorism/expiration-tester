@@ -23,6 +23,9 @@ class App {
 
     @Override
     String toString() {
+        if(tenantGuid){
+            return "${appName}: with ${id} and clientId: ${clientId} for tenant: ${tenantGuid} expires on ${dateExpired}"
+        }
         return "${appName}: with ${id} and clientId: ${clientId} expires on ${dateExpired}"
     }
 }

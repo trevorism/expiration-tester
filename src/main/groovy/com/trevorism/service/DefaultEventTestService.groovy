@@ -40,7 +40,7 @@ class DefaultEventTestService implements EventTestService {
 
     @Override
     boolean ensureUsersNotExpiring() {
-        List<User> users = userRepository.list()
+        List<User> users = userRepository.all()
 
         List<User> soonToExpireUsers = users.findAll { User user ->
             user.isActive() && user.dateExpired && user.dateExpired.before(Date.from(Instant.now().plus(10, ChronoUnit.DAYS)))
@@ -68,7 +68,7 @@ class DefaultEventTestService implements EventTestService {
 
     @Override
     boolean ensureAppsNotExpiring() {
-        List<App> apps = appRepository.list()
+        List<App> apps = appRepository.all()
 
         List<App> soonToExpireApps = apps.findAll { App app ->
             app.active && app.dateExpired && app.dateExpired.before(Date.from(Instant.now().plus(10, ChronoUnit.DAYS)))

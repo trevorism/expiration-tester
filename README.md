@@ -4,5 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/trevorism/expiration-tester)
 ![GitHub top language](https://img.shields.io/github/languages/top/trevorism/expiration-tester)
 
+Tests objects in Trevorism.com for potential expiration soon and alerts if they do.
+
 # How to build
 `gradle clean build`

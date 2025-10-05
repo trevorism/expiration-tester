@@ -9,7 +9,6 @@ class DefaultEventTestServiceTest {
     void testEnsureUsersNotExpiring() {
         DefaultEventTestService service = new DefaultEventTestService([get: { x -> "[]" }, post: { x,y -> "yes" }, delete: { x -> "{}"}] as SecureHttpClient)
         assert service.ensureUsersNotExpiring()
-
     }
 
     @Test

@@ -18,6 +18,9 @@ class User {
 
     @Override
     String toString() {
+        if(tenantGuid){
+            return "${username}: with ${id} and email: ${email} for tenant: ${tenantGuid} expires on ${dateExpired}"
+        }
         return "${username}: with ${id} and email: ${email} expires on ${dateExpired}"
     }
 
