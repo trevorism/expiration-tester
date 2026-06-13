@@ -1,4 +1,4 @@
-runtime: java21
+runtime: java25
 service: expiration-tester
 entrypoint: java -jar expiration-tester-all.jar
 handlers:
