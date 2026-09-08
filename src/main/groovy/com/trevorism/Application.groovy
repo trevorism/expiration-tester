@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
 @OpenAPIDefinition(
         info = @Info(
                 title = "Expiration Tester",
-                version = "0.4.0",
+                version = AppVersion.SEMVER,
                 description = "Expiration tester web based test",
                 contact = @Contact(url = "https://trevorism.com", name = "Trevor Brooks", email = "tbrooks@trevorism.com")
         )
