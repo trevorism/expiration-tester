@@ -27,8 +27,8 @@ class WebTestController {
     @Inject
     CertsTestService certsTestService
 
-    @Tag(name = "Test Endpoint Operations")
-    @Operation(summary = "Tests expiration of apps and users **Secure")
+@Tag(name = "Test Endpoint Operations")
+    @Operation(summary = "Tests expiration of apps, users, and certs **Secure")
     @Post(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     TestResult testUserExpiry(@Body TestSuite testSuite) {
