@@ -1,4 +1,4 @@
-package com.trevorism.service
+package com.trevorism.bean
 
 interface EventTestService {
 

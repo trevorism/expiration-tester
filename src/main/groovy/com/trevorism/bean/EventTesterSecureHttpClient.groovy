@@ -1,9 +1,8 @@
-package com.trevorism.service
+package com.trevorism.bean
 
-import com.trevorism.https.AppClientSecureHttpClient
+
 import com.trevorism.https.SecureHttpClient
 import com.trevorism.https.SecureHttpClientBase
-import com.trevorism.https.token.ObtainTokenStrategy
 import jakarta.inject.Named
 
 @jakarta.inject.Singleton
