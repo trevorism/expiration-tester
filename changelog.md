@@ -1,3 +1,7 @@
+## 0.6.0
+
+Certs expire, so adding a check for those. They should be automatically rotated.
+
 ## 0.5.0
 
 Update to latest dependencies.

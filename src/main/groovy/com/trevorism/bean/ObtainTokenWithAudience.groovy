@@ -1,4 +1,4 @@
-package com.trevorism.service
+package com.trevorism.bean
 
 import com.google.gson.Gson
 import com.trevorism.ClasspathBasedPropertiesProvider

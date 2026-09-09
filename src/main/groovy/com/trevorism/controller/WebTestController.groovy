@@ -4,7 +4,8 @@ import com.trevorism.model.TestResult
 import com.trevorism.model.TestSuite
 import com.trevorism.secure.Roles
 import com.trevorism.secure.Secure
-import com.trevorism.service.EventTestService
+import com.trevorism.service.CertsTestService
+import com.trevorism.bean.EventTestService
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
@@ -23,6 +24,9 @@ class WebTestController {
     @Inject
     EventTestService eventTestService
 
+    @Inject
+    CertsTestService certsTestService
+
     @Tag(name = "Test Endpoint Operations")
     @Operation(summary = "Tests expiration of apps and users **Secure")
     @Post(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
@@ -33,6 +37,7 @@ class WebTestController {
         try {
             allTestResults << eventTestService.ensureAppsNotExpiring()
             allTestResults << eventTestService.ensureUsersNotExpiring()
+            allTestResults << certsTestService.ensureCertsNotExpiring()
 
             boolean didAllTestsPass = allTestResults.every { it }
             return createTestResult(testSuite, didAllTestsPass, allTestResults.size(), startTime)

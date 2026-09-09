@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.trevorism.AlertClient
 import com.trevorism.TestErrorClient
+import com.trevorism.bean.EventTestService
 import com.trevorism.data.FastDatastoreRepository
 import com.trevorism.data.Repository
 import com.trevorism.https.SecureHttpClient
