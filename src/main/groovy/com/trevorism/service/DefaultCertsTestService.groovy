@@ -22,6 +22,7 @@ import java.time.temporal.ChronoUnit
 class DefaultCertsTestService implements CertsTestService {
 
     private static final Logger log = LoggerFactory.getLogger(DefaultCertsTestService.class.name)
+    public static final int CERT_DAYS_EXPIRY_CUTOFF = 15
 
     private Repository<ManagedCertificate> managedCertificateRepository
     private AlertClient alertClient
@@ -38,7 +39,7 @@ class DefaultCertsTestService implements CertsTestService {
         List<ManagedCertificate> certs = managedCertificateRepository.list()
 
         List<ManagedCertificate> soonToExpireCerts = certs.findAll { ManagedCertificate cert ->
-            cert.enabled && cert.notAfter && parseNotAfter(cert.notAfter).isBefore(Instant.now().plus(84, ChronoUnit.DAYS))
+            cert.enabled && cert.notAfter && parseNotAfter(cert.notAfter).isBefore(Instant.now().plus(CERT_DAYS_EXPIRY_CUTOFF, ChronoUnit.DAYS))
         }
 
         List<ManagedCertificate> expiredCerts = certs.findAll { ManagedCertificate cert ->
